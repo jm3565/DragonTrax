@@ -22,6 +22,7 @@ namespace DragonTrax.Controllers
             return View();
         }
 
+        // Comment for test
         //public ActionResult Contact()
         //{
         //    ViewBag.Message = "Your contact page.";
