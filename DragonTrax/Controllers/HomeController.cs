@@ -22,6 +22,7 @@ namespace DragonTrax.Controllers
             return View();
         }
 
+        // Another comment
         // Comment for test
         //public ActionResult Contact()
         //{
