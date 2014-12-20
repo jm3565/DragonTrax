@@ -24,11 +24,23 @@ namespace DragonTrax.Controllers
 
         // Another comment
         // Comment for test
-        //public ActionResult Contact()
-        //{
-        //    ViewBag.Message = "Your contact page.";
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
 
-        //    return View();
-        //}
+            return View();
+        }
+
+        public ActionResult AddCase()
+        {
+            ViewBag.Message = "Add a case";
+            return View();
+        }
+
+        public ActionResult NewEvaluation()
+        {
+            ViewBag.Message = "See New Evaluation";
+            return View();
+        }
     }
 }
