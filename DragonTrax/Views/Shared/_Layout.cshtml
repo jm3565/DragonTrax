@@ -2,47 +2,64 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - DragonTrax</title>
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
+        <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.11.2.min.js"></script>
+        @Styles.Render("~/Content/themes/base/css")
+        <script src="http://cdn.alloyui.com/3.0.0/aui/aui-min.js"></script>
+        <link href="http://cdn.alloyui.com/3.0.0/aui-css/css/bootstrap.min.css" rel="stylesheet">
+        
     </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+<body style="padding-top:0px">
+    <a href="Index">
+        <img src="~/Content/Icons/DragonTrax logo.png" style="width:25%" />
+    </a>
+    <a href="#" style="float:right">
+        Name
+        <img src="~/Content/Icons/blank.png" style="width:40%;border:1px solid;margin-top:5px" />
+    </a>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("DashBoard", "Index", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Cases
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Add Case", "AddCase", "Home")</li>
+                            <li><a href="#">Previous Cases</a></li>
                         </ul>
-                    </nav>
-                </div>
+                    </li>
+                    <li>@Html.ActionLink("Evaluations", "NewEvaluation", "Home")</li>
+                    <li><a href="#">Log Time</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">My Account</a></li>
+                </ul>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
-                @RenderBody()
-            </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
+    </nav>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - DragonTrax</p>
+
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    
+</body>
 </html>
